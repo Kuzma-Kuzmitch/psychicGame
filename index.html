@@ -12,14 +12,32 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="jumbotron text-center">
+        <div id="gameStatic" class="col-md-12 d-block">
+          <div class="jumbotron text-center mb-0">
+            <img src="https://i.pinimg.com/originals/67/33/d3/6733d354b2221d63cc4e3f002429e009.png" class="img-fluid" alt="Meditate" style="height:400px; width:300px">
             <h1>The Psychic Game!</h1>
             <h3>Can you guess what word I'm thinking of?</h3>
             <h4><i>Hint:<span id="wordHint"></span></i></h4>
           </div>
         </div>
-        <div  id="buttons" class="col-md-4">
+        <div id="gameWin" class="col-md-12 d-none">
+          <div class="jumbotron text-center mb-0">
+            <img src="https://media.tenor.com/images/d3df66a9099ff2f669ae595b2c061ad1/tenor.png" class="img-fluid border" alt="Meditate" style="height:400px; width:300px">
+            <h1>You Win!</h1>
+            <h3>You'll be a hero yet!</h3>
+            <h4><button type="button" id="replayGame" class="btn btn-primary">Play Again?</button></h4>
+          </div>
+        </div>
+        <div id="gameLoss" class="col-md-12 d-none">
+          <div class="jumbotron text-center mb-0">
+            <img src="http://digitalspyuk.cdnds.net/16/43/320x320/square-1477475223-benedict-cumberbatch-doctor-strange-set-shrug.jpg" class="img-fluid" alt="Meditate">
+            <h1>You Lose!</h1>
+            <h2>(Really?)</h2>
+            <h3>I thought that was pretty easy...</h3>
+            <h4><button type="button" id="retryGame" class="btn btn-primary">Play Again?</button></h4>
+          </div>
+        </div>
+        <div class="col-md-4">
           <div class="card">
               <button type="button"  id="button1" class="btn btn-primary">A</button>
           </div>
@@ -33,7 +51,7 @@
           <div class="card">
               <button type="button" id="button3" class="btn btn-primary">C</button>
           </div>
-        </div>
+      </div>
       </div>
     </div>
 

@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 var wordsAndHints = {
-  "Words": ["Dog", "Cat", "Algebra", "Amnesty", "Clockwork", "Sublime", "Novella", "Violin", "Psychosis",],
-  "Hints": ["A Modern Lupine", "A Littler Rat Catcher", "The Strassburg Tablet", "Trump Will Need This", "Very Punctual", "A Good Feeling, Or a Good Band?", "Not Quite An Epic", "A Small One For Small Sympathy", "Trump Gives Me This"],
+  "Words": ["Dog", "Cat", "Algebra", "Amnesty", "Clockwork", "Sublime", "Novella", "Violin", "Psychosis", "Television", "Religion", "The Mind", "YouTube", "Spider-Man", "Thanos"],
+  "Hints": ["A Modern Lupine", "A Littler Rat Catcher", "The Strassburg Tablet", "Trump Will Need This", "Very Punctual", "A Good Feeling, Or a Good Band?", "Not Quite An Epic", "A Small One For Small Sympathy", "Trump Gives Me This", "Marquee Moon", "An Opiate For The Masses", "My Stomping Ground", "Freetime Vacuum", "Friendly Neighborhood Hero", "A Total Dick"],
   "OtherWords": ["Monkey", "Virus", "Lolipop", "Internet", "Ipod", "Chicken", "Pillow", "Japan", "Tongue"],
 };
 var gameNumber = Math.floor(wordsAndHints.Words.length * Math.random())
@@ -39,13 +39,19 @@ function generateButton () {
 
 function calculateWin () {
   if ($(this).hasClass("winner")) {
-    alert("You win!")
-    location.reload()
+    $("#gameStatic").removeClass("d-block").addClass("d-none")
+    $("#gameWin").removeClass("d-none").addClass("d-block")
+    $(".card").addClass("d-none")
   }
   else {
-    alert("I'm sorry, try again!")
+    $("#gameStatic").removeClass("d-block").addClass("d-none")
+    $("#gameLoss").removeClass("d-none").addClass("d-block")
+    $(".card").addClass("d-none")
   }
-  // console.log($(this))
+}
+
+function restartGame () {
+  location.reload()
 }
 
 generateButton ()
@@ -64,6 +70,9 @@ $("#wordHint").text(" " + wordsAndHints.Hints[gameNumber])
 $("#button1").on("click", calculateWin)
 $("#button2").on("click", calculateWin)
 $("#button3").on("click", calculateWin)
+$("#replayGame").on("click", restartGame)
+$("#retryGame").on("click", restartGame)
+
 
 
 
